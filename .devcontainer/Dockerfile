@@ -3,7 +3,7 @@ FROM ubuntu:24.04
 # ------------------------------
 # Labels
 # ------------------------------
-LABEL maintainer="Rudy Marchandise"
+LABEL maintainer="EduardoA3677"
 LABEL github="https://github.com/Ealenn/codespaces-typescript"
 
 # ------------------------------
@@ -14,10 +14,10 @@ ENV USER=${USER:-ubuntu}
 ENV HOME=/home/${USER}
 
 ARG TZ
-ENV TZ=${TZ:-Europe/Paris}
+ENV TZ=${TZ:-America/Mexico_City}
 
 ARG LOCAL
-ENV LOCAL=${LOCAL:-en_GB.UTF-8}
+ENV LOCAL=${LOCAL:-en_US.UTF-8}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
