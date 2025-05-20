@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/docker-existing-dockerfile
 {
-  "name": "TypeScript",
+  "name": "Python3",
 
   "build": {
     "context": ".",
@@ -9,11 +9,36 @@
     "args": {
       "PUID": "1000",
       "PGID": "1000",
-      "TZ": "Europe/Paris",
-      "LOCAL": "en_GB.UTF-8"
+      "TZ": "America/Mexico_City",
+      "LOCAL": "en_US.UTF-8"
     }
   },
-
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "installOhMyZshConfig": true,
+      "upgradePackages": true,
+      "username": "vscode",
+      "userUid": "1000",
+      "userGid": "1000"
+    },
+    "ghcr.io/duduribeiro/devcontainer-features/neovim:1.0.1": {},
+    "ghcr.io/duduribeiro/devcontainer-features/tmux:latest": {
+      "version": "3.4"
+    },
+    "ghcr.io/georgofenbeck/features/lazygit-linuxbinary:latest": {},
+    "ghcr.io/devcontainers-contrib/features/fzf:latest": {},
+    "ghcr.io/social-anthrax/eza-devcontainer/eza:0": {},
+    "ghcr.io/jungaretti/features/ripgrep:1": {}
+  },
   "customizations": {
     "vscode": {
       // Set *default* container specific settings.json values on container create.
@@ -22,13 +47,16 @@
         "workbench.iconTheme": "vscode-icons",
         "editor.fontFamily": "Consolas, 'Courier New', monospace, 'Hack Nerd Font Mono'",
         "terminal.integrated.fontFamily": "Consolas, 'Hack Nerd Font Mono'",
-        "terminal.integrated.fontSize": 14
+        "terminal.integrated.fontSize": 14,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "github.copilot.chat.codesearch.enabled": true,
+        "github.copilot.chat.agent.thinkingTool": true,
+        "github.copilot.editor.enableCodeActions": true,
+        "github.copilot.chat.agent.runTasks": true,
+        "github.copilot.chat.search.semanticTextResults": true
       },
         // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        // TypeScript
-        "dbaeumer.vscode-eslint",
-        "oouo-diogo-perdigao.docthis",
         // Files
         "bungcip.better-toml",
         "yzhang.markdown-all-in-one",
@@ -42,23 +70,40 @@
         // Theme
         "vscode-icons-team.vscode-icons",
         // Docker
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "gruntfuggly.todo-tree",
+        "mhutchie.git-graph",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ryanluker.vscode-coverage-gutters",
+        "meezilla.json",
+        "eamodio.gitlens",
+        "emmanuelbeziat.vscode-great-icons",
+        "dongido.sync-env",
+        "yzhang.markdown-all-in-one",
+        "github.vscode-github-actions",
+        "foxundermoon.shell-format",
+        "shardulm94.trailing-spaces",
+        "github.vscode-pull-request-github",
+        "github.copilot",
+        "github.copilot-chat"
       ]
     }
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
+  "forwardPorts": [8888, 2222, 9090, 8080, 4433, 2121, 9000, 3333, 4444],
 
   // Uncomment the next line to run commands after the container is created - for example installing curl.
   // "postCreateCommand": "apt-get update && apt-get install -y curl",
 
   // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-  // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+  "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
   
   // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
   "mounts": [
     "source=/home/ealen/.ssh,target=/home/user/.ssh,type=bind,readonly",
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ]
+  ],
+  "remoteUser": "vscode"
 }
