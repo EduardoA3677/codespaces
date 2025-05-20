@@ -1,17 +1,8 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/docker-existing-dockerfile
 {
-  "name": "Python3",
-  "build": {
-    "context": ".",
-    "dockerfile": "./Dockerfile",
-    "args": {
-      "PUID": "1000",
-      "PGID": "1000",
-      "TZ": "America/Mexico_City",
-      "LOCAL": "en_US.UTF-8"
-    }
-  },
+  "name": "codespaces",
+  "image": "ealen/codespaces",
   "customizations": {
     "vscode": {
       // Set *default* container specific settings.json values on container create.
