@@ -72,8 +72,8 @@
   
   // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
   "mounts": [
-    "source=/home/EduardoA3677/.ssh,target=/home/ubuntu/.ssh,type=bind,readonly",
-    "source=/home/EduardoA3677/.gnupg,target=/home/ubuntu/.gnupg,type=bind,readonly",
+    "source=/home/.ssh,target=/home/ubuntu/.ssh,type=bind,readonly",
+    "source=/home/.gnupg,target=/home/ubuntu/.gnupg,type=bind,readonly",
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ]
 }
