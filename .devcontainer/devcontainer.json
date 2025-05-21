@@ -23,7 +23,8 @@
     },
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/python:1": {
-      "version": "latest"
+      "version": "latest",
+      "installTools": true
     },
     "ghcr.io/duduribeiro/devcontainer-features/neovim:1.0.1": {},
     "ghcr.io/duduribeiro/devcontainer-features/tmux:latest": {
@@ -39,7 +40,9 @@
       // Set *default* container specific settings.json values on container create.
       "settings": {
         "eslint.alwaysShowStatus": true,
-        "workbench.iconTheme": "vscode-icons",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "workbench.iconTheme": "a-file-icon-vscode",
+        "workbench.colorTheme": "Atom Material Theme",
         "editor.fontFamily": "Consolas, 'Courier New', monospace, 'Hack Nerd Font Mono'",
         "terminal.integrated.fontFamily": "Consolas, 'Hack Nerd Font Mono'",
         "terminal.integrated.fontSize": 14,
@@ -49,36 +52,29 @@
         "github.copilot.editor.enableCodeActions": true,
         "github.copilot.chat.agent.runTasks": true,
         "github.copilot.chat.search.semanticTextResults": true
+        
       },
         // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        // Files
-        "bungcip.better-toml",
-        "yzhang.markdown-all-in-one",
         // Global
+        "tobiasalthoff.atom-material-theme",
         "editorconfig.editorconfig",
         "gruntfuggly.todo-tree",
         "eamodio.gitlens",
         // Front
         "naumovs.color-highlight",
-        "octref.vetur",
-        // Theme
-        "vscode-icons-team.vscode-icons",
         // Docker
         "ms-azuretools.vscode-docker",
         "gruntfuggly.todo-tree",
         "mhutchie.git-graph",
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "ryanluker.vscode-coverage-gutters",
         "meezilla.json",
         "eamodio.gitlens",
-        "emmanuelbeziat.vscode-great-icons",
-        "dongido.sync-env",
+        "AtomMaterial.a-file-icon-vscode",
         "yzhang.markdown-all-in-one",
         "github.vscode-github-actions",
         "foxundermoon.shell-format",
-        "shardulm94.trailing-spaces",
         "github.vscode-pull-request-github",
         "github.copilot",
         "github.copilot-chat"
