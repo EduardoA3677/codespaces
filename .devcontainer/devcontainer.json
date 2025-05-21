@@ -82,5 +82,6 @@
     }
   },
   "forwardPorts": [8888, 2222, 9090, 8080, 4433, 2121, 9000, 3333, 4444],
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "postCreateCommand": "sudo apt update && sudo apt install -y software-properties-common && sudo add-apt-repository universe && sudo apt update && sudo apt install -y tree fonts-powerline fonts-firacode curl wget"
 }
